@@ -13,15 +13,15 @@ int main(void)
 	/* your code goes there */
 	if (n < 0)
 	  {
-	    puts("is negative");
+	    puts("%d is negative", n);
 	  }
 	else if (n > 0)
 	  {
-	    puts("is positive");
+	    puts("%d is positive", n);
 	  }
 	else
 	  {
-	    puts("is zero");
+	    puts("%d is zero", 0);
 	  }
 	return (0);
 }
