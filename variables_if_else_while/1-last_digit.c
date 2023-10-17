@@ -21,7 +21,6 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	nSign = n / abs(n);
 
-	printf("%d\n", n);
 	putchar('L');
 	putchar('a');
 	putchar('s');
