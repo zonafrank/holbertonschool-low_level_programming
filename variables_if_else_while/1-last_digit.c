@@ -4,97 +4,31 @@
 #include <stdio.h>
 
 /**
- * printMsgPart1 - prints first part of the message
+ * printMsg - prints a string to the console
  * Return: Always 0 (success)
  */
-int printMsgPart1(void)
+int printMsg(char *ch)
 {
-	putchar('L');
-	putchar('a');
-	putchar('s');
-	putchar('t');
-	putchar(' ');
-	putchar('d');
-	putchar('i');
-	putchar('g');
-	putchar('i');
-	putchar('t');
-	putchar(' ');
-	putchar('o');
-	putchar('f');
-	putchar(' ');
+	while (*ch != '\0')
+	{
+		putchar(*ch);
+		ch++;
+	}
 	return (0);
 }
 
-/**
- * printMsgPart3 - prints third part of the message
- * Return: Always 0 (success)
- */
-int printMsgPart3(void)
+char *intToString(int num)
 {
-	putchar('l');
-	putchar('e');
-	putchar('s');
-	putchar('s');
-	putchar(' ');
-	putchar('t');
-	putchar('h');
-	putchar('a');
-	putchar('n');
-	putchar(' ');
-	putchar('6');
-	putchar(' ');
-	putchar('a');
-	putchar('n');
-	putchar('d');
-	putchar(' ');
-	putchar('n');
-	putchar('o');
-	putchar('t');
-	putchar(' ');
-	putchar('0');
-	return (0);
-}
+	int length = snprintf(NULL, 0, "%d", num);
+	char *str = (char *)malloc(length + 1);
+	// Check if memory allocation was successful
+	if (str != NULL)
+	{
+		// Use snprintf to convert the integer to a string
+		snprintf(str, length + 1, "%d", num);
+	}
 
-/**
- * printMsgPart4 - prints fourth part of the message
- * Return: Always 0 (success)
- */
-int printMsgPart4(void)
-{
-	putchar('g');
-	putchar('r');
-	putchar('e');
-	putchar('a');
-	putchar('t');
-	putchar('e');
-	putchar('r');
-	putchar(' ');
-	putchar('t');
-	putchar('h');
-	putchar('a');
-	putchar('n');
-	putchar(' ');
-	putchar('5');
-	return (0);
-}
-
-/**
- * printMsgPart2 - prints second part of the message
- * Return: Always 0 (success)
- */
-int printMsgPart2(int lastDigit)
-{
-	putchar('0' + abs(lastDigit));
-	putchar(' ');
-	putchar('a');
-	putchar('n');
-	putchar('d');
-	putchar(' ');
-	putchar('i');
-	putchar('s');
-	putchar(' ');
-	return (0);
+	return str;
 }
 
 /**
@@ -109,60 +43,28 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	nSign = n / abs(n);
 
-	printMsgPart1();
+	printMsg("Last digit of ");
+	printMsg(intToString(n));
 
-	/* print the random number*/
-	val = n;
-	reverse = 0;
+	/* placeholder for deleted lines of code*/
 
-	while (val != 0)
-	{
-		remainder = val % 10;
-		reverse = reverse * 10 + remainder;
-		val /= 10;
-	}
-
-	val = abs(reverse);
-
-	if (nSign == -1)
-		putchar('-');
-
-	if (val == 0)
-	{
-		putchar('0');
-	}
-	else
-	{
-		while (val != 0)
-		{
-			digit = val % 10;
-			putchar('0' + digit);
-			val /= 10;
-		}
-
-		if (n % 10 == 0)
-			putchar('0');
-	}
-
-	putchar(' ');
-	putchar('i');
-	putchar('s');
-	putchar(' ');
+	printMsg(" is ");
 
 	lastDigit = n % 10;
 
 	if (lastDigit < 0)
 		putchar('-');
 
-	printMsgPart2(lastDigit);
+	putchar('0' + abs(lastDigit));
+	printMsg(" and is ");
 
 	if (lastDigit == 0)
 		putchar('0');
 	else if (lastDigit < 6)
-		printMsgPart3();
+		printMsg("and is less than 6 and not 0");
 
 	else
-		printMsgPart4();
+		printMsg("and is greater than 5");
 
 	putchar('\n');
 	return (0);
