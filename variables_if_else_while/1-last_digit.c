@@ -37,11 +37,10 @@ char *intToString(int num)
  */
 int main(void)
 {
-	int n, val, lastDigit, nSign, reverse, remainder, digit;
+	int n, val, lastDigit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	nSign = n / abs(n);
 
 	printMsg("Last digit of ");
 	printMsg(intToString(n));
