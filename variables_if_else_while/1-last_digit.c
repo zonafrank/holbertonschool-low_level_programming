@@ -76,6 +76,7 @@ int printMsgPart4(void)
 	putchar('n');
 	putchar(' ');
 	putchar('5');
+	return (0);
 }
 
 /**
