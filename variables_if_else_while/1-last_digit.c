@@ -7,7 +7,8 @@
  * printMsg - Print a string character by character.
  * @ch: The input string to print
  *
- * This function prints each character in the input string 'ch' to the standard output.
+ * This function prints each character in the input string 'ch' to the
+ * standard output.
  *
  * Return: Always 0 (success)
  */
