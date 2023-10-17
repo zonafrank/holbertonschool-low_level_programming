@@ -60,10 +60,10 @@ int main(void)
 	if (lastDigit == 0)
 		putchar('0');
 	else if (lastDigit < 6)
-		printMsg("and is less than 6 and not 0");
+		printMsg("less than 6 and not 0");
 
 	else
-		printMsg("and is greater than 5");
+		printMsg("greater than 5");
 
 	putchar('\n');
 	return (0);
