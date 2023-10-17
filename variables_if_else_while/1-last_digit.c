@@ -17,6 +17,11 @@ int printMsg(char *ch)
 	return (0);
 }
 
+/**
+ * intToString - convert an integer to a string
+ *
+ * Return: string
+ */
 char *intToString(int num)
 {
 	int length = snprintf(NULL, 0, "%d", num);
