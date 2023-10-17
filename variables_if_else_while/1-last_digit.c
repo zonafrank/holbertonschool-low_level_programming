@@ -4,7 +4,11 @@
 #include <stdio.h>
 
 /**
- * printMsg - prints a string to the console
+ * printMsg - Print a string character by character.
+ * @ch: The input string to print
+ *
+ * This function prints each character in the input string 'ch' to the standard output.
+ *
  * Return: Always 0 (success)
  */
 int printMsg(char *ch)
