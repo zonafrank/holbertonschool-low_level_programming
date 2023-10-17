@@ -103,13 +103,7 @@ int printMsgPart2(int lastDigit)
  */
 int main(void)
 {
-	int n;
-	int val;
-	int lastDigit;
-	int nSign;
-	int reverse;
-	int remainder;
-	int digit;
+	int n, val, lastDigit, nSign, reverse, remainder, digit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
