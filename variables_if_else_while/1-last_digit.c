@@ -4,6 +4,99 @@
 #include <stdio.h>
 
 /**
+ * printMsgPart1 - prints first part of the message
+ * Return: Always 0 (success)
+ */
+int printMsgPart1(void)
+{
+	putchar('L');
+	putchar('a');
+	putchar('s');
+	putchar('t');
+	putchar(' ');
+	putchar('d');
+	putchar('i');
+	putchar('g');
+	putchar('i');
+	putchar('t');
+	putchar(' ');
+	putchar('o');
+	putchar('f');
+	putchar(' ');
+	return (0);
+}
+
+/**
+ * printMsgPart3 - prints third part of the message
+ * Return: Always 0 (success)
+ */
+int printMsgPart3(void)
+{
+	putchar('l');
+	putchar('e');
+	putchar('s');
+	putchar('s');
+	putchar(' ');
+	putchar('t');
+	putchar('h');
+	putchar('a');
+	putchar('n');
+	putchar(' ');
+	putchar('6');
+	putchar(' ');
+	putchar('a');
+	putchar('n');
+	putchar('d');
+	putchar(' ');
+	putchar('n');
+	putchar('o');
+	putchar('t');
+	putchar(' ');
+	putchar('0');
+	return (0);
+}
+
+/**
+ * printMsgPart4 - prints fourth part of the message
+ * Return: Always 0 (success)
+ */
+int printMsgPart4(void)
+{
+	putchar('g');
+	putchar('r');
+	putchar('e');
+	putchar('a');
+	putchar('t');
+	putchar('e');
+	putchar('r');
+	putchar(' ');
+	putchar('t');
+	putchar('h');
+	putchar('a');
+	putchar('n');
+	putchar(' ');
+	putchar('5');
+}
+
+/**
+ * printMsgPart2 - prints second part of the message
+ * Return: Always 0 (success)
+ */
+int printMsgPart2(int lastDigit)
+{
+	putchar('0' + abs(lastDigit));
+	putchar(' ');
+	putchar('a');
+	putchar('n');
+	putchar('d');
+	putchar(' ');
+	putchar('i');
+	putchar('s');
+	putchar(' ');
+	return (0);
+}
+
+/**
  *main - entry point
  *Return: Always 0 (success)
  */
@@ -21,20 +114,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	nSign = n / abs(n);
 
-	putchar('L');
-	putchar('a');
-	putchar('s');
-	putchar('t');
-	putchar(' ');
-	putchar('d');
-	putchar('i');
-	putchar('g');
-	putchar('i');
-	putchar('t');
-	putchar(' ');
-	putchar('o');
-	putchar('f');
-	putchar(' ');
+	printMsgPart1();
 
 	/* print the random number*/
 	val = n;
@@ -50,9 +130,7 @@ int main(void)
 	val = abs(reverse);
 
 	if (nSign == -1)
-	{
 		putchar('-');
-	}
 
 	if (val == 0)
 	{
@@ -68,9 +146,7 @@ int main(void)
 		}
 
 		if (n % 10 == 0)
-		{
 			putchar('0');
-		}
 	}
 
 	putchar(' ');
@@ -81,65 +157,18 @@ int main(void)
 	lastDigit = n % 10;
 
 	if (lastDigit < 0)
-	{
 		putchar('-');
-	}
 
-	putchar('0' + abs(lastDigit));
-	putchar(' ');
-	putchar('a');
-	putchar('n');
-	putchar('d');
-	putchar(' ');
-	putchar('i');
-	putchar('s');
-	putchar(' ');
+	printMsgPart2(lastDigit);
 
 	if (lastDigit == 0)
-	{
 		putchar('0');
-	}
 	else if (lastDigit < 6)
-	{
-		putchar('l');
-		putchar('e');
-		putchar('s');
-		putchar('s');
-		putchar(' ');
-		putchar('t');
-		putchar('h');
-		putchar('a');
-		putchar('n');
-		putchar(' ');
-		putchar('6');
-		putchar(' ');
-		putchar('a');
-		putchar('n');
-		putchar('d');
-		putchar(' ');
-		putchar('n');
-		putchar('o');
-		putchar('t');
-		putchar(' ');
-		putchar('0');
-	}
+		printMsgPart3();
+
 	else
-	{
-		putchar('g');
-		putchar('r');
-		putchar('e');
-		putchar('a');
-		putchar('t');
-		putchar('e');
-		putchar('r');
-		putchar(' ');
-		putchar('t');
-		putchar('h');
-		putchar('a');
-		putchar('n');
-		putchar(' ');
-		putchar('5');
-	}
+		printMsgPart4();
+
 	putchar('\n');
 	return (0);
 }
