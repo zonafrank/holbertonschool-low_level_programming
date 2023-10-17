@@ -21,10 +21,10 @@ char *intToString(int num)
 {
 	int length = snprintf(NULL, 0, "%d", num);
 	char *str = (char *)malloc(length + 1);
-	// Check if memory allocation was successful
+	/* Check if memory allocation was successful */
 	if (str != NULL)
 	{
-		// Use snprintf to convert the integer to a string
+		/* Use snprintf to convert the integer to a string */
 		snprintf(str, length + 1, "%d", num);
 	}
 
