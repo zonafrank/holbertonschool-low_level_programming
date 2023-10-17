@@ -28,7 +28,7 @@ char *intToString(int num)
 		snprintf(str, length + 1, "%d", num);
 	}
 
-	return str;
+	return (str);
 }
 
 /**
