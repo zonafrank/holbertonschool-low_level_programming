@@ -37,7 +37,7 @@ char *intToString(int num)
  */
 int main(void)
 {
-	int n, val, lastDigit;
+	int n, lastDigit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
