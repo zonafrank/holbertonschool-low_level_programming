@@ -5,7 +5,7 @@
  *
  * Return: Always 0 (success)
  */
-int main()
+int main(void)
 {
 	int i = 97;
 
@@ -14,6 +14,6 @@ int main()
 		putchar(i);
 		i = i + 1;
 	}
-	putchar(10);
+	putchar('\n');
 	return (0);
 }
