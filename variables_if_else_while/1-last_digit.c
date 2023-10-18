@@ -53,7 +53,8 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 
 	printMsg("Last digit of ");
-	printMsg(intToString(n));
+	char *numStr = intToString(n);
+	printMsg(numStr);
 
 	/* placeholder for deleted lines of code*/
 
@@ -76,5 +77,6 @@ int main(void)
 		printMsg("greater than 5");
 
 	putchar('\n');
+	free(numStr);
 	return (0);
 }
