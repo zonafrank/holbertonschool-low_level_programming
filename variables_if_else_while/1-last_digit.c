@@ -24,7 +24,7 @@ int printMsg(char *ch)
 
 /**
  * intToString - convert an integer to a string
- *
+ *@num: integer to be converted to a string
  * Return: string
  */
 char *intToString(int num)
