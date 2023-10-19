@@ -12,17 +12,25 @@ void jack_bauer(void)
 	int secondsInHour = 60 * 60;
 	int secondsInMinutes = 60;
 	int count = 0;
+	int seconds = 0;
+	int hours = 0;
+	int minutes = 0;
+	int min_before;
 
 	while (count < secondsInDay)
 	{
-		int seconds = count;
-		int hours;
-		int minutes;
+		seconds = count;
+		min_before = minutes;
 
 		hours = seconds / secondsInHour;
 		seconds = seconds % secondsInHour;
 		minutes = seconds / secondsInMinutes;
 		seconds = seconds % secondsInMinutes;
+
+		if (minutes == min_before)
+		{
+			continue;
+		}
 
 		printf("%02d:%02d:%02d", hours, minutes, seconds);
 		printf("\n");
