@@ -1,17 +1,13 @@
 /**
- * _isalpha - checks for alphanumeric character
+ * _isalpha - checks for alphabetic character
  * @c: character to check
  *
- * Return: 1 if argument is alphanumeric else returns 0
+ * Return: 1 if argument is alphabetic else returns 0
  */
 
 int _isalpha(int c)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else if (c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
 		return (1);
 	}
