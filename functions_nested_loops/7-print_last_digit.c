@@ -9,6 +9,6 @@ int print_last_digit(int num)
 {
 	int absNum = num < 0 ? num * -1 : num;
 	int lastDigit = absNum % 10;
-	_putchar(lastDigit);
+	_putchar('0' + lastDigit);
 	return (lastDigit);
 }
