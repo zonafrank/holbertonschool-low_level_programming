@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * jack_bauer - prints every minute of the day,  from 00:00 to 23:59
@@ -18,7 +19,12 @@ void jack_bauer(void)
 		while (minutes < 60)
 		{
 			printf("%02d:%02d", hours, minutes);
-			printf("\n");
+			_putchar('0' + (hours / 10));
+			_putchar('0' + (hours % 10));
+			_putchar(':');
+			_putchar('0' + (minutes / 10));
+			_putchar('0' + (minutes % 10));
+			_putchar("\n");
 			minutes++;
 		}
 		hours++;
