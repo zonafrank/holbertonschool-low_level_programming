@@ -2,7 +2,7 @@
  * _abs - computes the absolute value of an integer
  * @n: number to check
  *
- * Return: 1 if n > 0, -1 if n < 0, 0 if n == 0
+ * Return: positive value number if less than zero else return number
  */
 
 int _abs(int n)
