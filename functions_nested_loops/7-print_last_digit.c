@@ -8,7 +8,6 @@
 
 int print_last_digit(int num)
 {
-	printf("%d\n", num);
 	int lastDigit = abs(num % 10);
 	_putchar('0' + lastDigit);
 	return (lastDigit);
