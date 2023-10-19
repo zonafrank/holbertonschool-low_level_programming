@@ -18,15 +18,15 @@ void jack_bauer(void)
 
 		while (minutes < 60)
 		{
-			printf("%02d:%02d", hours, minutes);
 			_putchar('0' + (hours / 10));
 			_putchar('0' + (hours % 10));
 			_putchar(':');
 			_putchar('0' + (minutes / 10));
 			_putchar('0' + (minutes % 10));
+			_putchar('\n');
 			minutes++;
 		}
-		_putchar('\n');
+
 		hours++;
 	}
 	return;
