@@ -5,7 +5,7 @@
  * @num: integer to print to standard output
  * Return: void
  */
-void printInt(num)
+void printInt(int num)
 {
 	if (num < 0)
 	{
