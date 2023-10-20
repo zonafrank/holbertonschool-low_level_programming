@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * printInt - helper function to print an integer with multiple digits
  * @num: integer to print to standard output
@@ -7,7 +9,7 @@ void printInt(num)
 {
 	if (num < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		num = -num;
 	}
 
@@ -16,7 +18,7 @@ void printInt(num)
 		printInt(num / 10);
 	}
 
-	putchar(num % 10 + '0');
+	_putchar(num % 10 + '0');
 }
 
 /**
@@ -33,8 +35,8 @@ void print_to_98(int n)
 			printInt(n);
 			if (n > 98)
 			{
-				putchar(',');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
 			}
 			n--;
 		}
@@ -46,8 +48,8 @@ void print_to_98(int n)
 			printInt(n);
 			if (n < 98)
 			{
-				putchar(',');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
 			}
 			n++;
 		}
