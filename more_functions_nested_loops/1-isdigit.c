@@ -1,6 +1,16 @@
-#include "main.h"
+/**
+ * _isupper - a function that checks for a digit (0 through 9)
+ * @ch: character to check for
+ * Return: 1 if ch is a digit else 0
+ */
 
-int _isdigit(int num)
+int _isdigit(char ch)
 {
-	return 1;
+	int result = 0;
+
+	if (ch >= 48 && ch <= 57)
+	{
+		result = 1;
+	}
+	return (result);
 }
