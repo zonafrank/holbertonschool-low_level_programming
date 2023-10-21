@@ -9,4 +9,4 @@ ${NAME}: ${OBJ}
 	$(CC) $(CFLAGS) $^ -o $@
 
 $?: %.o: %.c
-	$(CC) -c $<
+	$(CC) -c $< -o $@
