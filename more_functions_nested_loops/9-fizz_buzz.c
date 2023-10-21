@@ -4,7 +4,7 @@
  * main - entry point
  * Return: Always 0 (success)
  */
-int main()
+int main(void)
 {
 	int i;
 	for (i = 1; i <= 100; i++)
