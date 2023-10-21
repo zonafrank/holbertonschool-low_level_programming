@@ -6,4 +6,7 @@ NAME = school
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	$(CC) $? -o $@
+	$(CC) ${OBJ} -o $@
+
+%.o: %.c
+	$(CC) -o $@ $?
