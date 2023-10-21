@@ -10,7 +10,7 @@ void print_multi(long value)
 	if (value != 0)
 	{
 		print_multi(value / 10);
-		putchar((value % 10) + '0');
+		_putchar((value % 10) + '0');
 	}
 }
 
@@ -30,7 +30,7 @@ void more_numbers(void)
 		{
 			print_multi(j);
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 	return;
 }
