@@ -8,5 +8,8 @@ all: ${NAME}
 ${NAME}: ${OBJ}
 	$(CC) ${OBJ} -o $@
 
-%.o: %.c
-	$(CC) $< $(CFLAGS) -o $@ $<
+# %.o: %.c
+# 	echo Hello
+# 	$(CC) $< $(CFLAGS) -o $@ $<
+
+${OBJ}: %.o: %.c
