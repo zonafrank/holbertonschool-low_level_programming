@@ -1,6 +1,6 @@
 /**
- * _isupper - a function that checks for a digit (0 through 9)
- * @ch: character to check for
+ * _isdigit - a function that checks for a digit (0 through 9)
+ * @ch: input to check for
  * Return: 1 if ch is a digit else 0
  */
 
