@@ -1,12 +1,19 @@
 CC = gcc
+CFLAGS = -MMD -MP
 SRC = main.c school.c
-OBJ = ${SRC: .c=.o}
+OBJ = $(SRC:.c=.o)
+DEP = $(SRC:.c=.d)
 NAME = school
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${OBJ}
+$(NAME): $(OBJ)
 	$(CC) $^ -o $@
 
+-include $(DEP)
+
 %.o: %.c
-	$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ) $(NAME) $(DEP)
