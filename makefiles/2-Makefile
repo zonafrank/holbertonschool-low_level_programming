@@ -8,5 +8,5 @@ all: ${NAME}
 ${NAME}: ${OBJ}
 	$(CC) $(CFLAGS) $^ -o $@
 
-$?: %.o: %.c
+%.o: %.c
 	$(CC) -c $< -o $@
