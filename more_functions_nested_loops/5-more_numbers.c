@@ -7,11 +7,10 @@
  */
 void print_multi(long value)
 {
-	if (value != 0)
-	{
+	if (value / 10)
 		print_multi(value / 10);
-		_putchar((value % 10) + '0');
-	}
+
+	_putchar(value % 10 + '0');
 }
 
 /**
