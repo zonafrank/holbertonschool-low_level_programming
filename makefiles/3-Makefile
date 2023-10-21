@@ -19,11 +19,11 @@ $(NAME): $(OBJ)
 re: fclean all
 
 clean:
-	${RM} *~ school
+	${RM} *~ ${NAME}
 
 oclean:
 	${RM} ${OBJ}
 
 fclean:
-	${RM} *~ school
+	${RM} *~ ${NAME}
 	${RM} ${OBJ}
