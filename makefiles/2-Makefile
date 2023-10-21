@@ -7,4 +7,6 @@ all: ${OBJ}
 	$(CC) ${OBJ} -o ${NAME}
 
 ${OBJ}: %.o: %.c
+	echo $<
+	echo $@
 	$(CC) -c -o $@ $<
