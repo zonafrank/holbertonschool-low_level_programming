@@ -8,5 +8,5 @@ all: ${NAME}
 ${NAME}: ${OBJ}
 	$(CC) ${OBJ} -o $@
 
-%.o: %.c
-	$(CC) -c -o $@ $<
+# %.o: %.c
+# 	$(CC) -c -o $@ $<
