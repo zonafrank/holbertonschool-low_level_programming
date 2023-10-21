@@ -22,8 +22,8 @@ clean:
 	${RM} *~ school
 
 oclean:
-	${RM} main.o school.o
+	${RM} ${OBJ}
 
 fclean:
 	${RM} *~ school
-	${RM} main.o school.o
+	${RM} ${OBJ}
