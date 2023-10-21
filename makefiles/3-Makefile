@@ -16,6 +16,8 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) -c $< -o $@
 
+re: fclean all
+
 clean:
 	${RM} *~ school
 
