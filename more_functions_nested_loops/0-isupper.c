@@ -1,4 +1,10 @@
 int _isupper(char ch)
 {
-	return 1;
+	int result = 0;
+
+	if (ch >= 65 && ch <= 90)
+	{
+		result = 1;
+	}
+	return result;
 }
