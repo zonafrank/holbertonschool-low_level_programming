@@ -11,13 +11,28 @@ void _puts(char *str)
 	int count = 0;
 	char ch;
 
-	do
+	// do
+	// {
+	// 	ch = str[count];
+	// 	if (ch == '\0')
+	// 		_putchar('\n');
+	// 	else
+	// 		_putchar(ch);
+	// 	count++;
+	// } while (ch != '\0');
+
+	while (1)
 	{
 		ch = str[count];
 		if (ch == '\0')
+		{
 			_putchar('\n');
+			break;
+		}
 		else
+		{
 			_putchar(ch);
+		}
 		count++;
-	} while (ch != '\0');
+	}
 }
