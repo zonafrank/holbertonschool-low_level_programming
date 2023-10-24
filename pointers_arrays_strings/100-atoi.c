@@ -33,7 +33,7 @@ int _atoi(char *s)
 			}
 		}
 
-		*s++;
+		s++;
 	}
 
 	return (num * sign);
