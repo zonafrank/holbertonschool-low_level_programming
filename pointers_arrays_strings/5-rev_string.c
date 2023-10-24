@@ -1,8 +1,7 @@
 void rev_string(char *s)
 {
 	int length = 0;
-	char ch;
-	char a, b, temp;
+	char upper, lower, temp;
 
 	while (s[length] != '\0')
 	{
@@ -10,8 +9,8 @@ void rev_string(char *s)
 	}
 
 	length--;
-	int upper = length;
-	int lower = 0;
+	upper = length;
+	lower = 0;
 
 	while (upper > lower)
 	{
