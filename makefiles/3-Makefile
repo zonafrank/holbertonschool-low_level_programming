@@ -1,8 +1,6 @@
 CC = gcc
-# CFLAGS = -MMD -MP
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
-# DEP = $(SRC:.c=.d)
 NAME = school
 RM = rm -f
 
@@ -11,12 +9,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@
 
-# -include $(DEP)
-
 %.o: %.c
 	$(CC) -c $< -o $@
-
-re: fclean all
 
 clean:
 	${RM} *~ ${NAME}
@@ -25,3 +19,4 @@ oclean:
 	${RM} ${OBJ}
 
 fclean: clean oclean
+re: fclean all
