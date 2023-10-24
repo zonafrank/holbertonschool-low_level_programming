@@ -5,14 +5,18 @@ NAME = school
 RM = rm -f
 
 all: $(NAME)
+
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
-	
+	$(CC) $^ -o $@
+
+%.o: %.c
+	$(CC) -c $< -o $@
+
 clean:
-	$(RM) *~ $(NAME)
+	${RM} *~ ${NAME}
 
 oclean:
-	$(RM) $(OBJ)
+	${RM} ${OBJ}
 
 fclean: clean oclean
 re: fclean all
