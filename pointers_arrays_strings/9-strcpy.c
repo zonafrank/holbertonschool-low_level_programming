@@ -4,8 +4,8 @@
  * to the buffer pointed to by dest
  *@src: pointer to string
  *@dest: buffer to copy the string to
- Return: buffer dest
-*/
+ *Return: buffer dest
+ */
 
 char *_strcpy(char *dest, char *src)
 {
@@ -21,5 +21,5 @@ char *_strcpy(char *dest, char *src)
 		counter++;
 	}
 
-	return dest;
+	return (dest);
 }
