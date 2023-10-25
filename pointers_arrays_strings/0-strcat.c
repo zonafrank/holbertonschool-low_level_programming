@@ -23,5 +23,5 @@ char *_strcat(char *dest, char *src)
 		srcIndex++;
 	}
 
-	return dest;
+	return (dest);
 }
