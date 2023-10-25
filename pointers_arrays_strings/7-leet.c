@@ -5,30 +5,21 @@
  */
 char *leet(char *s)
 {
-	int index = 0;
-	while (s[index] != '\0')
+	int i = 0;
+	int j;
+	char targets[] = {'A', 'E', 'O', 'T', 'L'};
+	char replacements[] = {'4', '3', '0', '7', '1'};
+
+	while (s[i] != '\0')
 	{
-		if (s[index] == 'a' || s[index] == 'A')
+		for (j = 0; j < 5; j++)
 		{
-			s[index] = '4';
+			if (s[i] == targets[j] || s[i] == targets[j] + 32)
+			{
+				s[i] = replacements[j];
+			}
 		}
-		else if (s[index] == 'e' || s[index] == 'E')
-		{
-			s[index] = '3';
-		}
-		else if (s[index] == 'o' || s[index] == ')')
-		{
-			s[index] = '0';
-		}
-		else if (s[index] == 't' || s[index] == 'T')
-		{
-			s[index] = '7';
-		}
-		else if (s[index] == 'l' || s[index] == 'L')
-		{
-			s[index] = '1';
-		}
-		index++;
+		i++;
 	}
 	return s;
 }
