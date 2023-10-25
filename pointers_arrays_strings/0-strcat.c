@@ -10,13 +10,13 @@
 char *_strcat(char *dest, char *src)
 {
 	int destLen = 0;
+	int srcIndex = 0;
 
 	while (dest[destLen] != '\0')
 	{
 		destLen++;
 	}
 
-	int srcIndex = 0;
 	while (src[srcIndex] != '\0')
 	{
 		dest[destLen + srcIndex] = src[srcIndex];
