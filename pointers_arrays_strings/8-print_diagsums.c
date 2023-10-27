@@ -8,7 +8,7 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j;
+	int i;
 	int sum_diag1 = 0;
 	int sum_diag2 = 0;
 
