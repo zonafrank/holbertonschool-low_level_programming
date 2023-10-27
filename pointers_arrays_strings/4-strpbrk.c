@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strspn - gets the length of a prefix substring
+ * _strbrk - gets the length of a prefix substring
  * @s: pointer to string literal to find substring in
  * @accept: pointer that contains characters to be found
  *
@@ -19,7 +19,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*s == accept[j])
 			{
-				return s;
+				return (s);
 			}
 
 			j++;
