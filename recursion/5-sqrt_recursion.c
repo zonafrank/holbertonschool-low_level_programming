@@ -44,7 +44,7 @@ int _sqrt_helper(int low, int high, int n)
  *
  * Return: integer, value of x raised to the power of y
  */
-int _sqrt_recursion(int long n)
+int _sqrt_recursion(int n)
 {
 	return _sqrt_helper(1, n / 2, n);
 }
