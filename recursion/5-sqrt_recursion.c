@@ -2,7 +2,7 @@
 
 /**
  * _sqrt_helper - helper function where recursive calls are made
- * 	to find the square root of the given number n
+ * to find the square root of the given number n
  * @low: the lower boundary value of range of number range for which
  * a middle value is to be selected
  * @high: the upper boundary value of the range of numbers for which
