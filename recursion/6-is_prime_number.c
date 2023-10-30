@@ -14,9 +14,9 @@ int prime_helper(int n, int i)
 	if (n == 2 || n == 3)
 		return (1);
 	if (n % i == 0)
-		return 0;
+		return (0);
 	if (i * i > n)
-		return 1;
+		return (1);
 
 	return (prime_helper(n, i + 1));
 }
