@@ -22,7 +22,7 @@ long int _sqrt_helper(long int low, long int high, long int n)
 		/* hence the square root */
 		if (mid * mid == n)
 		{
-			return mid;
+			return (mid);
 		}
 		/* if the square of mid is less than n and a square root */
 		/* exists, it lies in the region above mid */
@@ -49,5 +49,7 @@ long int _sqrt_helper(long int low, long int high, long int n)
  */
 int _sqrt_recursion(int n)
 {
+	if (n <= 0)
+		return (-1);
 	return _sqrt_helper(1, n / 2, n);
 }
