@@ -9,7 +9,7 @@
  * a middle value is to be selected
  * @n: the value for which a square root is to be found
  */
-int _sqrt_helper(int low, int high, int n)
+long long _sqrt_helper(long long low, long long high, long long n)
 {
 	if (n == 1)
 		return 1;
@@ -17,7 +17,7 @@ int _sqrt_helper(int low, int high, int n)
 	if (low <= high)
 	{
 		/* calculates middle value of the range low - high */
-		int mid = (low + high) / 2;
+		long long mid = (low + high) / 2;
 		/* check if the middle value squared is equalt to n */
 		/* hence the square root */
 		if (mid * mid == n)
