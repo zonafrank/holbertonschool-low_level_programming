@@ -11,6 +11,9 @@
  */
 int _sqrt_helper(int low, int high, int n)
 {
+	if (n == 1)
+		return 1;
+
 	if (low <= high)
 	{
 		/* calculates middle value of the range low - high */
