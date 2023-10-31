@@ -2,11 +2,13 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
-NAME = school
+NAME = libmy
 RM = rm -f
 
-all: $(OBJ)
-	ar rcs libmy.a $^
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	ar rcs $@.a $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
