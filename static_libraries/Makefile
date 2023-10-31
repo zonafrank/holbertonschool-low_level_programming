@@ -5,6 +5,9 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 
+all: $(OBJ)
+	ar rcs libmy.a $^
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
