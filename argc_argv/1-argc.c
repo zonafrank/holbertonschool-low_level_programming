@@ -6,8 +6,8 @@
  *@argv: array of pointers to strings representing command line arguments
  *Return: Always 0 (success)
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char __attribute__((__unused__)) * argv[])
 {
-	printf("%s\n", *argv);
+	printf("%d\n", argc);
 	return (0);
 }
