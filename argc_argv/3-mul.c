@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * chartoint - helper function for converting
+ * literal string of digits to an integer
+ * @ch: pointer to char type representing literal string
+ * Return: integer equivalent of ch
+ */
 int chartoint(char *ch)
 {
 	int result = 0;
