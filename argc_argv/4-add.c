@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * _isdigit - checks if a string literal can be converted to a valid integer
+ * @s: pointer to char type representing a string literal
+ * Return: 1 if s represents a valid integer, else 0
+ */
 int _isdigit(char *s)
 {
 	while (*s)
@@ -63,6 +68,7 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			char *token = argv[i];
+
 			isValid = _isdigit(token);
 
 			if (!isValid)
