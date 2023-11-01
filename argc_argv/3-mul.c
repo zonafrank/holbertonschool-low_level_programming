@@ -18,9 +18,16 @@ int chartoint(char *ch)
 		ch++;
 	}
 
-	return result * sign;
+	return (result * sign);
 }
 
+/**
+ * main - entry point to the program
+ * @argc: number of arguments passed to the program
+ * @argv: array of pointers to char representing arguments
+ * passed to the program
+ * Return: Always 0
+ */
 int main(int argc, char *argv[])
 {
 	if (argc < 3)
@@ -37,5 +44,5 @@ int main(int argc, char *argv[])
 
 		printf("%d\n", val1 * val2);
 	}
-	return 0;
+	return (0);
 }
