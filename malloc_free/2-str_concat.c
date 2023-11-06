@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /**
- * getlength: calculates the length of a string
+ * getlength - calculates the length of a string
  * @str: string literal for which length is to be calculated
  * Return: length of str
  */
@@ -12,7 +12,7 @@ int getlength(char *str)
 	while (str[length] != '\0')
 		length++;
 
-	return length;
+	return (length);
 }
 
 /**
@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 
 	s = malloc(s1_length + s2_length + 1);
 	if (!s)
-		return NULL;
+		return (NULL);
 
 	i = 0;
 	while (i < s1_length)
@@ -52,5 +52,5 @@ char *str_concat(char *s1, char *s2)
 		i++;
 	}
 	s[s1_length + s2_length] = '\0';
-	return s;
+	return (s);
 }
