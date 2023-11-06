@@ -27,6 +27,8 @@ char *str_concat(char *s1, char *s2)
 	char *s;
 	size_t i;
 
+	s1 = s1 == NULL ? "" : s1;
+	s2 = s2 == NULL ? "" : s2;
 	size_t s1_length = getlength(s1);
 	size_t s2_length = getlength(s2);
 
