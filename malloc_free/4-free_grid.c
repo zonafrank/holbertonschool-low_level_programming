@@ -14,6 +14,8 @@ void free_grid(int **grid, int height)
 
 	for (i = 0; i < height; i++)
 	{
+		printf(sizeof(*grid[1]));
 		free(grid[i]);
 	}
+	free(grid);
 }
