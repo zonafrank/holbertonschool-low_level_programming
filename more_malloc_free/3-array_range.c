@@ -16,12 +16,12 @@ int *array_range(int min, int max)
 
 	members = (max - min) + 1;
 
-	intrange = malloc(members * (sizeof(int)));
+	intrange = malloc(members * sizeof(int));
 
-	if (!intrange)
+	if (intrange == NULL)
 		return (NULL);
 
-	for (i = 0; i <= members; i++)
+	for (i = 0; min <= members; i++)
 		intrange[i] = min++;
 
 	return (intrange);
