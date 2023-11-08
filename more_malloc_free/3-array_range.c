@@ -7,9 +7,6 @@ int *array_range(int min, int max)
 {
 	int *intrange, members, i;
 
-	if (min == NULL || max == NULL)
-		return (NULL);
-
 	if (min > max)
 		return (NULL);
 
