@@ -7,6 +7,7 @@
 void *malloc_checked(unsigned int b)
 {
 	char *m;
+
 	m = malloc(sizeof(m) * b);
 
 	if (!m)
@@ -14,5 +15,5 @@ void *malloc_checked(unsigned int b)
 		return (int *)(98);
 	}
 
-	return m;
+	return (m);
 }
