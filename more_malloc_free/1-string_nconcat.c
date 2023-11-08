@@ -3,8 +3,8 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int s1_size, s2_size, i, j;
-	int s_size;
+	unsigned int s1_size, s2_size, i, j;
+	unsigned int s_size;
 	char *s;
 
 	for (s1_size = 0; s1[s1_size] != '\0'; s1_size++)
