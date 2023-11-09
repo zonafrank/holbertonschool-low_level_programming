@@ -4,7 +4,7 @@
  * main - prints the name of the file containing the program
  * Return: Always 0 (success);
  */
-int main()
+int main(void)
 {
 	printf("%s\n", __FILE__);
 	return (0);
