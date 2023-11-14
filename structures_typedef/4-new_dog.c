@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include "dog.h"
+
 /**
  * new_dog - creates a new dog with the provided information
  * @name: the name of the new dog
  * @age: the age of the new dog
  * @owner: the owner of the new dog
  * Return: a pointer to the newly created dog (dog_t).
- * 	returns NULL if memory allocation fails
+ * returns NULL if memory allocation fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -17,13 +18,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *owner_cp;
 
 	if (name == NULL || owner == NULL)
-		return NULL;
+		return (NULL);
 
 	d_ptr = malloc(sizeof(dog_t));
 
 	if (d_ptr == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	name_cp = strdup(name);
@@ -33,12 +34,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d_ptr->name);
 		free(d_ptr->owner);
 		free(d_ptr);
-		return NULL;
+		return (NULL);
 	}
 
 	d_ptr->name = name_cp;
 	d_ptr->owner = owner_cp;
 	d_ptr->age = age;
 
-	return d_ptr;
+	return (d_ptr);
 }
