@@ -13,6 +13,9 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d_ptr;
+	char *name_cp;
+	char *owner_cp;
+
 	if (name == NULL || owner == NULL)
 		return NULL;
 
@@ -20,14 +23,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (d_ptr == NULL)
 	{
-		free(d_ptr);
 		return NULL;
 	}
 
-	d_ptr->name = strdup(name);
-	d_ptr->owner = strdup(owner);
-
-	if (d_ptr->name == NULL || d_ptr->owner == NULL)
+	name_cp = strdup(name);
+	owner_cp = strdup(owner);
+	if (name_cp == NULL || owner_cp == NULL)
 	{
 		free(d_ptr->name);
 		free(d_ptr->owner);
@@ -35,6 +36,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return NULL;
 	}
 
+	d_ptr->name = name_cp;
+	d_ptr->owner = owner_cp;
 	d_ptr->age = age;
 
 	return d_ptr;
