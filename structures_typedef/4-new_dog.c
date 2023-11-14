@@ -20,9 +20,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (d_ptr == NULL)
 		return NULL;
 
-	(*d_ptr).name = name;
+	(*d_ptr).name = strdup(name);
 	(*d_ptr).age = age;
-	(*d_ptr).owner = owner;
+	(*d_ptr).owner = strdup(owner);
 
 	return d_ptr;
 }
