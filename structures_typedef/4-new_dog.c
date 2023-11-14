@@ -12,14 +12,15 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	// Check for NULL input strings
-	if (name == NULL || owner == NULL)
+	dog_t *new_dog_ptr
+	    // Check for NULL input strings
+	    if (name == NULL || owner == NULL)
 	{
 		return NULL;
 	}
 
 	// Allocate memory for the new dog
-	dog_t *new_dog_ptr = malloc(sizeof(dog_t));
+	new_dog_ptr = malloc(sizeof(dog_t));
 	if (new_dog_ptr == NULL)
 	{
 		return NULL; // Memory allocation failed
