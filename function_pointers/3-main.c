@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	operation = argv[2];
 	v2 = atoi(argv[3]);
 
-	if (get_op_func(operation) == NULL)
+	if (get_op_func(operation) == NULL || operation[1] != '\0')
 	{
 		printf("Error\n");
 		return (99);
