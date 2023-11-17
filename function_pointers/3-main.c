@@ -31,6 +31,6 @@ int main(int argc, char *argv[])
 	}
 
 	res = get_op_func(operation)(v1, v2);
-	printf("%i", res);
+	printf("%i\n", res);
 	return (0);
 }
