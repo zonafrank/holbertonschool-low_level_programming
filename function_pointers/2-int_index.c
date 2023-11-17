@@ -7,5 +7,5 @@ int int_index(int *array, int size, int (*cmp)(int))
 	for (index = 0; index < size && (check = cmp(array[index])) != 1; index++)
 		;
 
-	return check ? check : result;
+	return check ? index : result;
 }
