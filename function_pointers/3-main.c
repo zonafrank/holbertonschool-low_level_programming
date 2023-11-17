@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 	if ((*operation == '/' || *operation == '%') && v2 == 0)
 	{
-		print("Error\n");
+		printf("Error\n");
 		return (100);
 	}
 
