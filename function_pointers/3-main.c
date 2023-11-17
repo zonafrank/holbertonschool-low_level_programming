@@ -3,6 +3,13 @@
 #include "3-calc.h"
 #define EXPECTED_ARGS 4
 
+/**
+ * main - performs simple calculations based on user input
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 0 if no error, 98 if incorrect number of arguments
+ * 99 if invalid operation is provided, 100 if division by zero is attempted
+ */
 int main(int argc, char *argv[])
 {
 	int v1, v2, res;
