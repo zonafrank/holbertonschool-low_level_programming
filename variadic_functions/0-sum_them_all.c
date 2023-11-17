@@ -1,6 +1,13 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 
+/**
+ * sum_them_all - receives a variable number of parameters
+ * and returns the sum of them
+ * @n: The number of variable parameters passed to the function
+ * @...: A variable number of parameters passed to the function
+ * Return: 0 if n is 0, else the sum of the variable parameters.
+ */
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list ap;
@@ -9,7 +16,7 @@ int sum_them_all(const unsigned int n, ...)
 	if (n == 0)
 	{
 		va_end(ap);
-		return 0;
+		return (0);
 	}
 
 	va_start(ap, n);
@@ -20,5 +27,5 @@ int sum_them_all(const unsigned int n, ...)
 	}
 
 	va_end(ap);
-	return sum;
+	return (sum);
 }
