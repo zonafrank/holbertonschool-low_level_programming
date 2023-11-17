@@ -3,14 +3,14 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - prints numbers, separated by an uptional
- * separator character
+ * print_numbers - prints strings, separated by an uptional
+ * separator character.
  * @separator: the string to be printed between numbers
- * @n: the number of integers passed to the function
- * @...: a variable length of parameters representing n integers
+ * @n: the number of strings passed to the function
+ * @...: a variable length of parameters representing n strings
  * Return: void
  */
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int i;
