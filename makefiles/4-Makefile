@@ -27,3 +27,4 @@ oclean:
 fclean:
 	${RM} *~ ${NAME}
 	${RM} ${OBJ}
+	
