@@ -50,7 +50,7 @@ void print_string(va_list arg)
 
 	if (!s)
 	{
-		printf("(nil");
+		printf("(nil)");
 		return;
 	}
 	printf("%s", s);
@@ -89,9 +89,9 @@ void print_all(const char *const format, ...)
 
 		if (funcs[j].symbol)
 		{
+			printf("%s", separator);
 			funcs[j].printer(ap);
-			if (format[i + 1])
-				printf("%s", separator);
+			separator = ", ";
 		}
 		i++;
 	}
