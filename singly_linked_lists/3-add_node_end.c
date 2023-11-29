@@ -5,7 +5,7 @@
 #include "lists.h"
 
 /**
- * add_node - adds a new node at the beginning of a list_t linked list
+ * add_node_end - adds a new node at the end of a list_t linked list
  * @head: pointer to pointer to the first memory addres of the linked list
  * @str: pointer to the first address of the string to be added to the list
  * Return: pointer to first address of the list
