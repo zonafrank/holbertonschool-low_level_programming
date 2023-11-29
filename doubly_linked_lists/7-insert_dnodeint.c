@@ -24,6 +24,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (add_dnodeint(h, n));
 	}
 
+	count = 1;
 	while (node)
 	{
 		if (count == idx)
