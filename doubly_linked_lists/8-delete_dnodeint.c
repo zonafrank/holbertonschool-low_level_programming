@@ -49,8 +49,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return 1;
 	}
 
-	printf("node->prev->n: ---%d---\n", node->prev->n);
-	printf("ode->prev->next->n: ---%d---\n", node->prev->next->n);
 	node->prev->next = node->next;
 	node->next->prev = node->prev;
 	node->prev = NULL;
