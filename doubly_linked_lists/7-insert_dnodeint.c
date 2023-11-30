@@ -3,6 +3,17 @@
 #include <stdio.h>
 #include "lists.h"
 
+dlistint_t *create_mem_alloc(int n)
+{
+	dlistint_t *new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
+}
+
 /**
  * insert_dnodeint_at_index - Inserts a new node at a given position in a
  * doubly linked list.
@@ -20,12 +31,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (head == NULL && idx > 0)
 		return (NULL);
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	new = create_mem_alloc(n);
+	if (!new)
 		return (NULL);
-	new->n = n;
-	new->next = NULL;
-	new->prev = NULL;
 	if (head == NULL)
 	{
 		*h = new;
