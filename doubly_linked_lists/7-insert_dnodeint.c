@@ -3,9 +3,15 @@
 #include <stdio.h>
 #include "lists.h"
 
+/**
+ * create_mem_alloc - gets memory allocation for a dlistint_t type
+ * @n: value of the data member of the struct
+ * Return: the first memory address or NULL if allocation fails
+ */
 dlistint_t *create_mem_alloc(int n)
 {
 	dlistint_t *new = malloc(sizeof(dlistint_t));
+
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
