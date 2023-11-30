@@ -39,10 +39,21 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		count++;
 	}
 
+	if (!head && count == idx - 1)
+	{
+		/* Index is at the end of the list */
+		new->prev = head;
+		if (head)
+			head->next = new;
+		else
+			*h = new;
+		return new;
+	}
+
 	if (!head || count != idx)
 	{
 		free(new);
-		return NULL; /* Index out of bounds */
+		return (NULL); /* Index out of bounds */
 	}
 
 	new->next = head;
