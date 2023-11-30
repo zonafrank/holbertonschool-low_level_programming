@@ -40,7 +40,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		count++;
 	}
 
-	if (head == NULL && idx == count + 1)
+	if (head == NULL && idx == count)
 	{
 		head = tmp;
 		tmp->next = new;
