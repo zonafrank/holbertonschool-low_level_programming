@@ -27,16 +27,22 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->next = NULL;
 	new->prev = NULL;
 
-	if (!head && idx == 0)
-	{
-		*h = new;
-		return (new);
-	}
+	/* if (!head && idx == 0)
+	// {
+	// 	*h = new;
+	// 	return (new);
+	// }*/
 
 	while (head && count != idx)
 	{
 		head = head->next;
 		count++;
+	}
+
+	if (!head || count != idx)
+	{
+		free(new);
+		return NULL; /* Index out of bounds */
 	}
 
 	new->next = head;
