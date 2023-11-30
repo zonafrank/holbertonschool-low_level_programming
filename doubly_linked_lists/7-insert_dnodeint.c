@@ -40,16 +40,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		count++;
 	}
 
-	if (head == NULL && idx == count)
+	if (head == NULL)
 	{
-		head = tmp;
-		tmp->next = new;
-		new->prev = head;
-		return (new);
-	}
+		if (count == idx)
+		{
+			head = tmp;
+			tmp->next = new;
+			new->prev = head;
+			return (new);
+		}
 
-	if (!head || count != idx)
-	{
 		free(new);
 		return (NULL); /* Index out of bounds */
 	}
