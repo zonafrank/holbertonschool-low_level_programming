@@ -33,7 +33,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (new);
 	}
 
-	while (head && count != idx)
+	while (head && count < idx)
 	{
 		tmp = head;
 		head = head->next;
