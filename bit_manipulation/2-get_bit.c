@@ -14,7 +14,6 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	if (index >= sizeof(unsigned long int) * 8)
 	{
-		printf("Error, index out of range\n");
 		return -1;
 	}
 
