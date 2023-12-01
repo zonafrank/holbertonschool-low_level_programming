@@ -9,6 +9,7 @@
 unsigned int _strlen(const char *ch)
 {
 	unsigned int len = 0;
+
 	if (ch == NULL)
 		return (len);
 
@@ -34,7 +35,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int str_length, power;
 
 	if (!b)
-		return res;
+		return (res);
 
 	str_length = _strlen(b);
 	power = str_length - 1;
