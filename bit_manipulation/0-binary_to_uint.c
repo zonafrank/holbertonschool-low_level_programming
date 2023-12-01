@@ -10,7 +10,7 @@ unsigned int _strlen(const char *ch)
 {
 	unsigned int len = 0;
 	if (ch == NULL)
-		return len;
+		return (len);
 
 	while (*ch != '\0')
 	{
@@ -18,7 +18,7 @@ unsigned int _strlen(const char *ch)
 		ch++;
 	}
 
-	return len;
+	return (len);
 }
 
 /**
@@ -42,12 +42,12 @@ unsigned int binary_to_uint(const char *b)
 	while (*b != '\0')
 	{
 		if (*b != '0' && *b != '1')
-			return 0;
+			return (0);
 
 		res += ((*b - '0') * (1 << power));
 		b++;
 		power--;
 	}
 
-	return res;
+	return (res);
 }
