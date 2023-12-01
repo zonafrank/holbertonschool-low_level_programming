@@ -1,4 +1,25 @@
+#include <stddef.h>
 #include "main.h"
+
+/**
+ * _strlen - calculates the length of a string
+ * @ch: pointer to a string literal
+ * Return: length of the string of zero if ch is null
+ */
+unsigned int _strlen(const char *ch)
+{
+	unsigned int len = 0;
+	if (ch == NULL)
+		return len;
+
+	while (*ch != '\0')
+	{
+		len++;
+		ch++;
+	}
+
+	return len;
+}
 
 /**
  * binary_to_uint - converts a binary number to an unsigned int
