@@ -34,7 +34,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	letters_read = read(fd, c, letters);
-	c[letters] = '\0';
+	c[letters_read] = '\0';
 
 	letters_written = write(1, c, letters_read);
 
