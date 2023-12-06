@@ -71,7 +71,7 @@ int main(int ac, char **av)
 		{
 			close(fd_from);
 			close(fd_to);
-			handle_error(99, "Error: Can't write to %s", av[2], 0);
+			handle_error(99, "Error: Can't write to %s\n", av[2], 0);
 		}
 	}
 
@@ -79,14 +79,14 @@ int main(int ac, char **av)
 	{
 		close(fd_from);
 		close(fd_to);
-		handle_error(98, "Error: Can't read from file %s", av[1], 0);
+		handle_error(98, "Error: Can't read from file %s\n", av[1], 0);
 	}
 
 	if (close(fd_from) == -1)
-		handle_error(100, "Error: Can't close fd %d", NULL, fd_from);
+		handle_error(100, "Error: Can't close fd %d\n", NULL, fd_from);
 
 	if (close(fd_to) == -1)
-		handle_error(100, "Error: Can't close fd %d", NULL, fd_to);
+		handle_error(100, "Error: Can't close fd %d\n", NULL, fd_to);
 
 	return (0);
 }
