@@ -15,10 +15,33 @@
  *
  * Return: This function does not return, as it exits the program.
  */
-void handle_error(int code, const char *message, char *arg)
+void handle_error(int code, const char *message, const char *str_arg, int int_arg)
 {
-	dprintf(STDERR_FILENO, message, arg);
+	if (str_arg)
+		dprintf(STDERR_FILENO, message, str_arg);
+	if (int_arg)
+		dprintf(STDERR_FILENO, message, int_arg);
 	exit(code);
+}
+
+/**
+ * open_file - Opens a file with specified flags and permissions, handling errors.
+ * @filename: The name of the file to open.
+ * @flags: The flags to use when opening the file.
+ * @perms: The permissions to set if the file is created.
+ *
+ * Return: The file descriptor on success, or -1 on failure.
+ */
+int open_file(const char *filename, int flags, mode_t perms)
+{
+	int fd = open(filename, flags, perms);
+	if (fd == -1 && (flags & O_WRONLY))
+		handle_error(99, "Error: Can't write to %s", filename, 0);
+	else if (fd == -1 && (flags & O_RDONLY))
+	{
+		handle_error(98, "Error: Can't read from file %s", filename, 0);
+	}
+	return fd;
 }
 
 /**
@@ -35,32 +58,35 @@ int main(int ac, char **av)
 	char buffer[BUFFSIZE];
 
 	if (ac < 3)
-		handle_error(97, "Usage: cp file_from file_to\n", NULL);
+		handle_error(97, "Usage: %s file_from file_to\n", av[0], 0);
 
-	fd_from = open(av[1], O_RDONLY);
-	if (fd_from < 0)
-		handle_error(98, "Error: Can't read from file %s", av[1]);
-
-	fd_to = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	if (fd_to < 0)
-		handle_error(99, "Error: Can't write to %s", av[2]);
+	fd_from = open_file(av[1], O_RDONLY, 0664);
+	fd_to = open_file(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 
 	while ((chars_read = read(fd_from, buffer, BUFFSIZE)) > 0)
 	{
 		chars_written = write(fd_to, buffer, chars_read);
 
 		if (chars_written != chars_read)
-			handle_error(99, "Error: Can't write to %s", av[2]);
+		{
+			close(fd_from);
+			close(fd_to);
+			handle_error(99, "Error: Can't write to %s", av[2], 0);
+		}
 	}
 
 	if (chars_read == -1)
-		handle_error(98, "Error: Can't read from file %s", av[1]);
+	{
+		close(fd_from);
+		close(fd_to);
+		handle_error(98, "Error: Can't read from file %s", av[1], 0);
+	}
 
 	if (close(fd_from) == -1)
-		handle_error(100, "Error: Can't close fd %d", fd_from);
+		handle_error(100, "Error: Can't close fd %d", NULL, fd_from);
 
 	if (close(fd_to) == -1)
-		handle_error(100, "Error: Can't close fd %d", fd_to);
+		handle_error(100, "Error: Can't close fd %d", NULL, fd_to);
 
 	return (0);
 }
