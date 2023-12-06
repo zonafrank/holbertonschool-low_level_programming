@@ -19,8 +19,10 @@ void handle_error(int code, const char *message, const char *str_arg, int int_ar
 {
 	if (str_arg)
 		dprintf(STDERR_FILENO, message, str_arg);
-	if (int_arg)
+	else if (int_arg)
 		dprintf(STDERR_FILENO, message, int_arg);
+	else
+		dprintf(STDERR_FILENO, message);
 	exit(code);
 }
 
