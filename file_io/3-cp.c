@@ -19,10 +19,8 @@ void handle_error(int code, const char *message, const char *str_arg, int int_ar
 {
 	if (str_arg)
 		dprintf(STDERR_FILENO, message, str_arg);
-	else if (int_arg)
+	if (int_arg)
 		dprintf(STDERR_FILENO, message, int_arg);
-	else
-		dprintf(STDERR_FILENO, message);
 	exit(code);
 }
 
@@ -60,7 +58,7 @@ int main(int ac, char **av)
 	char buffer[BUFFSIZE];
 
 	if (ac < 3)
-		handle_error(97, "Usage: cp file_from file_to\n", NULL, 0);
+		handle_error(97, "Usage: %s file_from file_to\n", "cp", 0);
 
 	fd_from = open_file(av[1], O_RDONLY, 0664);
 	fd_to = open_file(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
