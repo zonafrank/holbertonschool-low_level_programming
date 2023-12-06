@@ -58,7 +58,7 @@ int main(int ac, char **av)
 	char buffer[BUFFSIZE];
 
 	if (ac < 3)
-		handle_error(97, "Usage: %s file_from file_to\n", av[0], 0);
+		handle_error(97, "Usage: cp file_from file_to\n", NULL, 0);
 
 	fd_from = open_file(av[1], O_RDONLY, 0664);
 	fd_to = open_file(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
