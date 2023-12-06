@@ -11,11 +11,13 @@
  *                and exiting with a specified error code.
  * @code: The error code to exit with.
  * @message: The error message format string.
- * @arg: The argument to be included in the error message.
+ * @str_arg: The string literal argument to be included in the error message.
+ * @int_arg: The integer argument to be included in the error message.
  *
  * Return: This function does not return, as it exits the program.
  */
-void handle_error(int code, const char *message, const char *str_arg, int int_arg)
+void handle_error(int code, const char *message,
+		  const char *str_arg, int int_arg)
 {
 	if (str_arg)
 		dprintf(STDERR_FILENO, message, str_arg);
@@ -25,7 +27,8 @@ void handle_error(int code, const char *message, const char *str_arg, int int_ar
 }
 
 /**
- * open_file - Opens a file with specified flags and permissions, handling errors.
+ * open_file - Opens a file with specified flags and permissions,
+ * handling errors.
  * @filename: The name of the file to open.
  * @flags: The flags to use when opening the file.
  * @perms: The permissions to set if the file is created.
@@ -35,13 +38,14 @@ void handle_error(int code, const char *message, const char *str_arg, int int_ar
 int open_file(const char *filename, int flags, mode_t perms)
 {
 	int fd = open(filename, flags, perms);
+
 	if (fd == -1 && (flags & O_WRONLY))
 		handle_error(99, "Error: Can't write to %s\n", filename, 0);
 	else if (fd == -1 && (flags & O_RDONLY))
 	{
 		handle_error(98, "Error: Can't read from file %s\n", filename, 0);
 	}
-	return fd;
+	return (fd);
 }
 
 /**
