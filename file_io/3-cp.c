@@ -36,10 +36,10 @@ int open_file(const char *filename, int flags, mode_t perms)
 {
 	int fd = open(filename, flags, perms);
 	if (fd == -1 && (flags & O_WRONLY))
-		handle_error(99, "Error: Can't write to %s", filename, 0);
+		handle_error(99, "Error: Can't write to %s\n", filename, 0);
 	else if (fd == -1 && (flags & O_RDONLY))
 	{
-		handle_error(98, "Error: Can't read from file %s", filename, 0);
+		handle_error(98, "Error: Can't read from file %s\n", filename, 0);
 	}
 	return fd;
 }
