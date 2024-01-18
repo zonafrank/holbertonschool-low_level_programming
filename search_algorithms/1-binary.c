@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * search_helper: helper function that does actual binary search
+ * search_helper - helper function that does actual binary search
  * @array: pointer to the array in which to search for a value
  * @left: left most index of the array
  * @right: right most index of the array
