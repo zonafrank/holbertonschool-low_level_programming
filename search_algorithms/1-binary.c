@@ -22,7 +22,7 @@ int search_helper(int *array, int left, int right, int value)
 	}
 	puts("");
 
-	if (right > left)
+	if (right >= left)
 	{
 		mid = (right + left) / 2;
 
