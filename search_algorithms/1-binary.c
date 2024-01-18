@@ -6,7 +6,7 @@
  * @left: left most index of the array
  * @right: right most index of the array
  * @value: value to search for in the array
- * return: index at which the value is found or -1 if not found
+ * Return: index at which the value is found or -1 if not found
  */
 int search_helper(int *array, int left, int right, int value)
 {
