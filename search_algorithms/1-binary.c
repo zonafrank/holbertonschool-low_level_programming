@@ -38,7 +38,7 @@ int search_helper(int *array, int left, int right, int value)
 		if (array[mid] < value)
 			return (search_helper(array, mid + 1, right, value));
 	}
-	return -1;
+	return (-1);
 }
 
 /**
