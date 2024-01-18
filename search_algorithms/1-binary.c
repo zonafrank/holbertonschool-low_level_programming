@@ -33,16 +33,17 @@ int search_helper(int *array, int left, int right, int value)
 			return (mid);
 
 		if (array[mid] > value)
-			return search_helper(array, left, mid - 1, value);
+			return (search_helper(array, left, mid - 1, value));
 
 		if (array[mid] < value)
-			return search_helper(array, mid + 1, right, value);
+			return (search_helper(array, mid + 1, right, value));
 	}
 	return -1;
 }
 
 /**
- * binary_search -
+ * binary_search - searches for a value in a sorted array of integers
+ * using the Binary search algorithm
  * @array: a pointer to the first element of the array to search in
  * @size:  the number of elements in array
  * @value: the value to search for
@@ -54,5 +55,5 @@ int binary_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	return search_helper(array, 0, size - 1, value);
+	return (search_helper(array, 0, size - 1, value));
 }
